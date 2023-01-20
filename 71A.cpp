@@ -6,9 +6,9 @@
 using namespace std;
 
 int main() {
-    #ifndef ONLINE_JUDGE
-        freopen("71A.in", "r", stdin);
-    #endif
+#ifndef ONLINE_JUDGE
+    freopen("71A.in", "r", stdin);
+#endif
     int n;
     cin >> n;
 
