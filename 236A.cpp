@@ -7,12 +7,11 @@
 using namespace std;
 
 int main() {
-    #ifndef ONLINE_JUDGE
-        freopen("236A.in", "r", stdin);
-    #endif
+#ifndef ONLINE_JUDGE
+    freopen("test.in", "r", stdin);
+#endif
 
     unordered_set<char> us;
-
     string s;
     cin >> s;
 

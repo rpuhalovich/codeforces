@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 #ifndef ONLINE_JUDGE
-    freopen("266A.in", "r", stdin);
+    freopen("test.in", "r", stdin);
 #endif
     int n;
     string s;
