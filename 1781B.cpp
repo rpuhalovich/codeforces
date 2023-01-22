@@ -5,9 +5,9 @@
 
 using namespace std;
 
-class Solution {
-public:
-};
+void solve() {
+
+}
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -18,4 +18,3 @@ int main() {
     cout << n << endl;
     return 0;
 }
-
