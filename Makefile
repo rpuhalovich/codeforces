@@ -6,5 +6,8 @@ $(BINS):
 	./$@
 	rm -rf $(BINS)
 
+clean:
+	rm -rf $(BINS)
+
 .SILENT:
-.PHONY: $(BINS)
+.PHONY: $(BINS) clean
