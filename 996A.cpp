@@ -1,8 +1,6 @@
 // https://codeforces.com/problemset/problem/996/A
 
-#include <iostream>
-#include <string>
-#include <unordered_map>
+#include <bits/stdc++.h>
 
 #define log(x) cout << x << endl
 
