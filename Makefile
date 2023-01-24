@@ -1,8 +1,15 @@
+ifeq ($(shell uname), Linux)
+    cc=g++
+endif
+ifeq ($(shell uname), Darwin)
+    cc=g++-12
+endif
+
 SRC=$(wildcard *.cpp)
 BINS=$(subst .cpp,,$(SRC))
 
 $(BINS):
-	g++-12 --std=c++20 -o $@ $@.cpp
+	$(cc) --std=c++20 -o $@ $@.cpp
 	./$@
 	rm -rf $(BINS)
 
