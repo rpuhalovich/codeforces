@@ -5,8 +5,7 @@ ifeq ($(shell uname), Darwin)
 	cc=g++-12
 endif
 
-SRC=$(wildcard *.cpp)
-BINS=$(subst .cpp,,$(SRC))
+BINS=$(subst .cpp,,$(wildcard *.cpp))
 
 $(BINS):
 	$(cc) --std=c++20 -o $@ $@.cpp

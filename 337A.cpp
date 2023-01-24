@@ -1,41 +1,42 @@
 // https://codeforces.com/problemset/problem/337/A
 
-#include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
 
 #define ll long long
 
 using namespace std;
 
-ll n, m;
-vector<int> v;
+int n, m;
+int arr[1000];
 
 void solve() {
     cin >> n >> m;
 
-    ll e;
+    int e;
     for (int i = 0; i < m; i++) {
         cin >> e;
-        v.push_back(e);
+        arr[i] = e;
     }
 
-    sort(v.begin(), v.end());
+    sort(arr, arr + m);
 
-    ll res = v[n - 1] - v[0];
-    for (ll i = n - 1; i < m; i++) {
-        ll cur = v[i] - v[i - n];
-        if (cur < res) res = cur;
-        // res = min(res, v[i] - v[i - n]);
+    int res = arr[n - 1] - arr[0];
+    for (int i = n; i < m; i++) {
+        res = min(res, arr[i] - arr[i - n + 1]);
+
     }
 
     cout << res << endl;
 }
 
 int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
 #ifndef ONLINE_JUDGE
     freopen("test.in", "r", stdin);
 #endif
+
     solve();
     return 0;
 }
