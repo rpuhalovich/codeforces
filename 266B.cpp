@@ -9,7 +9,17 @@ string s;
 
 void solve() {
     cin >> n >> t >> s;
-    cout << s << endl;;
+    for (int i = 0; i < t; i++) {
+        for (int j = 0; j < n - 1; j++) {
+            if (s[j] == 'B' && s[j + 1] == 'G') {
+                char tmp = s[j];
+                s[j] = s[j + 1];
+                s[j + 1] = tmp;
+                j++;
+            }
+        }
+    }
+    cout << s << endl;
 }
 
 int main() {

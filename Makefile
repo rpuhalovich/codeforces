@@ -1,8 +1,8 @@
 ifeq ($(shell uname), Linux)
-    cc=g++
+	cc=g++
 endif
 ifeq ($(shell uname), Darwin)
-    cc=g++-12
+	cc=g++-12
 endif
 
 SRC=$(wildcard *.cpp)
