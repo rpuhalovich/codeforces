@@ -2,7 +2,7 @@ SRC=$(wildcard *.cpp)
 BINS=$(subst .cpp,,$(SRC))
 
 $(BINS):
-	g++ --std=c++20 -o $@ $@.cpp
+	g++-12 --std=c++20 -o $@ $@.cpp
 	./$@
 	rm -rf $(BINS)
 
