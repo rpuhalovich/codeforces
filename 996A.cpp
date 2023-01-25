@@ -8,9 +8,11 @@ using namespace std;
 
 int n, res = 0;
 int coins[] = {100, 20, 10, 5, 1};
+vector<int> v;
 
 void solve() {
     cin >> n;
+    v.push_back(0);
 
     for (int i = 0; i < 5; i++) {
         int c = coins[i];
@@ -18,7 +20,7 @@ void solve() {
         n = n - ((n / c) * c);
     }
 
-    cout << res << endl;
+    cout << res << '\n';
 }
 
 int main() {
