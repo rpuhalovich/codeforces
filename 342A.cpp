@@ -4,7 +4,7 @@
 
 #define ll long long
 #define nl '\n'
-
+#define map unordered_map
 #define set unordered_set
 
 using namespace std;
