@@ -8,7 +8,7 @@ endif
 BINS=$(subst .cpp,,$(wildcard *.cpp))
 
 $(BINS):
-	$(cc) --std=c++20 -Wall -O2 -o $@ $@.cpp
+	$(cc) --std=c++20 -Wall -DLOCAL -O2 -o $@ $@.cpp
 	./$@
 	rm -rf $(BINS)
 
