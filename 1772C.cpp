@@ -2,32 +2,49 @@
 
 #include <bits/stdc++.h>
 
+#define nl '\n'
+
 using namespace std;
 
 int k, n;
+int cache[41], out[41];
 
-void setup(int k, int n) {
-    int cache[41];
-    for (int i = 0; i < k; i++) {
-        cache[i] = (i + 2) - (i + 1);
+void buildcache() {
+    cache[0] = 1;
+    for (int i = 1; i < 41; i++) {
+        cache[i] = cache[i - 1] + i;
+
     }
-    for (int i : cache) cout << i << " ";
-    cout << endl;
+    for (int i = 0; i < k; i++) cout << cache[i] << nl;
 }
 
 void solve() {
     cin >> k >> n;
-    setup(k, n);
+    int cursum = 1;
+    for (int i = 0; i < k; i++) {
+        out[i] = cache[i];
+    }
+
+    int cur = n;
+    for (int j = k - 1; j >= 0; j--) {
+        if (out[j] >= n) {
+            out[j] = n--;
+        }
+    }
+
+    for (int i = 0; i < k; i++) {
+        cout << out[i] << " ";
+    }
+    cout << nl;
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
+#ifdef LOCAL
+    (void)!freopen("test.in", "r", stdin);
 #endif
+    buildcache();
     int t;
     cin >> t;
-    for (int i = 0; i < t; i++) {
-        solve();
-    }
+    while (t--) solve();
     return 0;
 }
