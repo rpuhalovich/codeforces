@@ -8,6 +8,8 @@ const int ninf = INT_MIN;
 #define nl '\n'
 #define map unordered_map
 #define set unordered_set
+#define pi (2*acos(0.0))
+#define eps 1e-7
 
 using namespace std;
 

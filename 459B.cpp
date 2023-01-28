@@ -26,7 +26,7 @@ void solve() {
         }
         if (in > curmax) {
             curmax = in;
-            maxcnt = 0;
+           maxcnt = 0;
         }
 
         if (in == curmin) mincnt++;
@@ -35,7 +35,9 @@ void solve() {
 
     // cout << maxcnt << " " << mincnt << nl;
     // cout << curmax << " " << curmin << nl;
-    cout << curmax - curmin << " " << (curmax != curmin ? maxcnt * mincnt : maxcnt - 1) << nl;
+    // n*(n-1)/2 <- formula for the number of pairs a set of size n can make
+    // kinda lame that the solution requires a specific mathematical fact
+    cout << curmax - curmin << " " << (curmax != curmin ? maxcnt * mincnt : n*(n-1)/2) << nl;
 }
 
 int main() {
