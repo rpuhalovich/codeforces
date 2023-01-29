@@ -1,23 +1,21 @@
-//
-
 #include <bits/stdc++.h>
 
-using namespace std;
-
+const int inf = INT_MAX;
+const int ninf = INT_MIN;
 #define ll long long
 #define nl '\n'
 #define map unordered_map
 #define set unordered_set
+#define pi (2*acos(0.0))
+#define eps 1e-7
 
-const int inf = INT_MAX;
-const int ninf = INT_MIN;
+using namespace std;
 
-template<typename T>
-void vsort(vector<T>& v) {sort(v.begin(), v.end());}
-template<typename T1, typename T2, typename T3>
-bool mcontains(const map<T1, T2>& mp, T3 val) {return !(mp.find(val) == mp.end());}
+int i;
 
 void solve() {
+    cin >> i;
+
 }
 
 int main() {
