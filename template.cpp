@@ -15,7 +15,7 @@ const int ninf = INT_MIN;
 template<typename T>
 void vsort(vector<T>& v) {sort(v.begin(), v.end());}
 template<typename T1, typename T2, typename T3>
-bool mcontains(const map<T1, T2>& mp, T3 val) {return !(mp.find(val) == mp.end());}
+bool mcontains(const map<T1,T2>& mp, T3 val){return !(mp.find(val)==mp.end());}
 
 void solve() {
 }
