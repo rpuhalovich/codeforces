@@ -13,28 +13,34 @@ const int inf = INT_MAX;
 const int ninf = INT_MIN;
 
 template<typename T>
-void vsort(vector<T>& v) {sort(v.begin(), v.end());}
-template<typename T1, typename T2, typename T3>
-bool mcontains(const map<T1,T2>& mp, T3 val){return !(mp.find(val)==mp.end());}
+void vsort(vector<T>& v){sort(v.begin(), v.end());}
+template<typename T1, typename T2>
+bool contains(const T1& c, T2 k){return !(c.find(k)==c.end());}
 
 int n, in;
-int ints[100];
+map<int, int> mp;
 
 void solve() {
     cin >> n;
-    for (int i = 0; i < n; i++) {
+    for (int i=0;i<n;i++) {
         cin >> in;
-        ints[i] = in;
+        if(contains(mp, in))
+            mp[in]++;
+        else
+            mp.insert({in, 0});
     }
-    sort(ints, ints + n);
+    for (auto& p : mp) {
+        if (get<1>(p) > (n + 1) / mp.size()) {
+            cout << "NO" << nl;
+            return;
+        }
+    }
+    cout << "YES" << nl;
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-#ifdef LOCAL
-    (void)!freopen("test.in", "r", stdin);
-#endif
     solve();
     return 0;
 }

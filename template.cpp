@@ -8,14 +8,12 @@ using namespace std;
 #define nl '\n'
 #define map unordered_map
 #define set unordered_set
-
 const int inf = INT_MAX;
 const int ninf = INT_MIN;
-
 template<typename T>
-void vsort(vector<T>& v) {sort(v.begin(), v.end());}
-template<typename T1, typename T2, typename T3>
-bool mcontains(const map<T1,T2>& mp, T3 val){return !(mp.find(val)==mp.end());}
+void vsort(vector<T>& v){sort(v.begin(),v.end());}
+template<typename T>
+void rvsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 
 void solve() {
 }
