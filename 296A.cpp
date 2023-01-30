@@ -1,4 +1,7 @@
-//
+// https://codeforces.com/problemset/problem/296/A
+
+// impossible to have permutation if any of the items is
+// more than (n+1)/2 frequent.
 
 #include <bits/stdc++.h>
 
@@ -19,7 +22,6 @@ bool contains(const T1& c, T2 k){return !(c.find(k)==c.end());}
 
 int n, in;
 map<int, int> mp;
-
 void solve() {
     cin >> n;
     for (int i=0;i<n;i++) {
@@ -30,7 +32,7 @@ void solve() {
             mp.insert({in, 0});
     }
     for (auto& p : mp) {
-        if (get<1>(p) > (n + 1) / mp.size()) {
+        if (get<1>(p) >= (n + 1) / 2) {
             cout << "NO" << nl;
             return;
         }

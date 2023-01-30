@@ -6,6 +6,7 @@ ifeq ($(shell uname), Darwin)
 endif
 
 BINS=$(subst .cpp,,$(wildcard *.cpp))
+CONTEST_FILES=a.cpp b.cpp c.cpp d.cpp e.cpp f.cpp g.cpp h.cpp
 
 $(BINS):
 	$(cc) --std=c++20 -DLOCAL -o $@ $@.cpp
