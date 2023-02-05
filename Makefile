@@ -14,18 +14,11 @@ $(BINS):
 	rm -rf $(BINS)
 
 contest:
-	cp template.cpp a.cpp
-	cp template.cpp b.cpp
-	cp template.cpp c.cpp
-	cp template.cpp d.cpp
-	cp template.cpp e.cpp
-	cp template.cpp f.cpp
-	cp template.cpp g.cpp
-	cp template.cpp h.cpp
-	nvim -p a.cpp b.cpp c.cpp d.cpp e.cpp f.cpp g.cpp h.cpp
+	for file in $(CONTEST_FILES); do cp template.cpp $$file; done
+	nvim -p $(CONTEST_FILES)
 
 clean:
-	rm -rf $(BINS) a.cpp b.cpp c.cpp d.cpp e.cpp f.cpp g.cpp h.cpp
+	rm -rf $(BINS) $(CONTEST_FILES)
 
 .SILENT:
-.PHONY: $(BINS) clean
+.PHONY: $(BINS) clean contest
