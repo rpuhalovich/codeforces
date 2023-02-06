@@ -1,4 +1,4 @@
-//
+// https://codeforces.com/problemset/problem/276/B
 
 #include <bits/stdc++.h>
 
@@ -24,7 +24,34 @@ void logArr(T& arr,int n){cout<<"[ ";for(int i=0;i<n;i++)cout<<arr[i]<<" ";cout<
 template<typename T1,typename T2>
 void setArr(T1& arr,int n,T2 v){for(int i=0;i<n;i++)arr[i]=v;}
 
+string str;
+map<int, int> memo;
+int longest = 0;
+bool isPali(string s, int l, int r) {
+    while (l < r) {
+        if (s[l]!=s[r]) return false;
+        l++;
+        r++;
+    }
+    return true;
+}
+
+int dfs(int i, string curstr) {
+    if (memo.contains(i)) return memo[i];
+    if (i >= str.size()) return 0;
+
+    int curlen = 0;
+    if (isPali(curstr, 0, curstr.size() - 1)) curlen = curstr.size();
+    curlen = max(curlen, dfs(i + 1, curstr + str[i]));
+    curlen = max(curlen, dfs(i + 1, curstr));
+    memo.insert({i, curlen});
+    return curlen;
+}
+
 void solve() {
+    cin >> str;
+    int res = dfs(0, "");
+    cout << res << nl;
 }
 
 int main() {
