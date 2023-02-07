@@ -20,22 +20,26 @@ bool isPali(string s,int l,int r){while(l<r)if(s[l++]!=s[r--])return false;retur
 
 int t, sx, sy, ex, ey;
 string dirs;
+int closer(int e, int s1, int s2) {
+    return abs(e-s1)>abs(e-s2)?s2:s1;
+}
 void solve() {
     cin>>t>>sx>>sy>>ex>>ey;
     cin>>dirs;
 
     int time=0;
     for(int i=0;i<t;i++) {
-        if(dirs[i]=='N'&&abs(ey-sy)>abs(ey-sy+1))sy++;
-        if(dirs[i]=='S'&&abs(ey-sy)>abs(ey-sy-1))sy--;
-        if(dirs[i]=='E'&&abs(ex-sx)>abs(ex-sx+1))sx++;
-        if(dirs[i]=='W'&&abs(ex-sx)>abs(ex-sx-1))sx--;
+        if(dirs[i]=='N')sy = closer(ey, sy, sy+1);
+        if(dirs[i]=='S')sy = closer(ey, sy, sy-1);
+        if(dirs[i]=='E')sx = closer(ex, sx, sx+1);
+        if(dirs[i]=='W')sx = closer(ex, sx, sx-1);
         time++;
         if(sx==ex&&sy==ey) {
             cout<<time<<nl;
             return;
         }
     }
+
     cout<<-1<<nl;
 }
 
