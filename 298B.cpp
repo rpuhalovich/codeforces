@@ -16,7 +16,6 @@ template<typename T>
 void logArr(T& a,int n){cout<<"[ ";for(int i=0;i<n;i++)cout<<a[i]<<" ";cout<<"]"<<nl;}
 template<typename T1,typename T2>
 void setArr(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
-bool isPali(string s,int l,int r){while(l<r)if(s[l++]!=s[r--])return false;return true;}
 
 int t, sx, sy, ex, ey;
 string dirs;
@@ -29,10 +28,10 @@ void solve() {
 
     int time=0;
     for(int i=0;i<t;i++) {
-        if(dirs[i]=='N')sy = closer(ey, sy, sy+1);
-        if(dirs[i]=='S')sy = closer(ey, sy, sy-1);
-        if(dirs[i]=='E')sx = closer(ex, sx, sx+1);
-        if(dirs[i]=='W')sx = closer(ex, sx, sx-1);
+        if(dirs[i]=='N')sy=closer(ey, sy, sy+1);
+        if(dirs[i]=='S')sy=closer(ey, sy, sy-1);
+        if(dirs[i]=='E')sx=closer(ex, sx, sx+1);
+        if(dirs[i]=='W')sx=closer(ex, sx, sx-1);
         time++;
         if(sx==ex&&sy==ey) {
             cout<<time<<nl;
