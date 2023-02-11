@@ -25,10 +25,6 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
-    vector<int> v = {1,2,3,4,5};
-    cout<<v<<nl;
-    seta(v, v.size(), 10);
-    cout<<v<<nl;
 }
 
 int main() {
