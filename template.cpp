@@ -1,28 +1,40 @@
 //
 
 #include <bits/stdc++.h>
+
 using namespace std;
-#define ll long long
+
+#define f0r(a, b) for (long long a = 0; a < (b); ++a)
+#define f1r(a, b, c) for (long long a = (b); a < (c); ++a)
+#define f0rd(a, b) for (long long a = (b); a >= 0; --a)
+#define f1rd(a, b, c) for (long long a = (b); a >= (c); --a)
 #define nl '\n'
-#define map unordered_map
-#define set unordered_set
+#define ll long long
+#define umap unordered_map
+#define uset unordered_set
+#define f first
+#define s second
 const int inf = INT_MAX;
 const int ninf = INT_MIN;
-template<typename T>
-void sort(vector<T>& v){sort(v.begin(),v.end());}
-template<typename T>
-void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
-template<typename T>
-void logArr(T& a,int n){cout<<"[ ";for(int i=0;i<n;i++)cout<<a[i]<<" ";cout<<"]"<<nl;}
-template<typename T1,typename T2>
-void setArr(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
+
+template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v) {
+	cout<<"[ ";for(int i=0;i<v.size();i++){cout<<v[i]<<" ";}return cout<<"]";
+}
+template<typename T> void sort(vector<T>& v){sort(v.begin(),v.end());}
+template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
+template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
+    vector<int> v = {1,2,3,4,5};
+    cout<<v<<nl;
+    seta(v, v.size(), 10);
+    cout<<v<<nl;
 }
 
 int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    solve();
+    ios::sync_with_stdio(0); cin.tie(0);
+    int t = 1;
+    // cin >> t;
+    while (t--) solve();
     return 0;
 }
