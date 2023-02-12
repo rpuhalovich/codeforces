@@ -23,7 +23,8 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
-    int n;cin >> n;
+    int n;
+    cin >> n;
     int x = 0, xin, y = 0, yin, z = 0, zin;
     while (n--) {
         cin >> xin >> yin >> zin;
