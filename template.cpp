@@ -17,9 +17,7 @@ using namespace std;
 const int inf = INT_MAX;
 const int ninf = INT_MIN;
 
-template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v) {
-	cout<<"[ ";for(int i=0;i<v.size();i++){cout<<v[i]<<" ";}return cout<<"]";
-}
+template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v){cout<<"[ ";for(int i=0;i<v.size();i++){cout<<v[i]<<" ";}return cout<<"]";}
 template<typename T> void sort(vector<T>& v){sort(v.begin(),v.end());}
 template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
