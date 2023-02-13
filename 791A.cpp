@@ -1,4 +1,4 @@
-// https://codeforces.com/problemset/problem/69/A
+//
 
 #include <bits/stdc++.h>
 
@@ -23,16 +23,13 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
-    int n;
-    cin >> n;
-    int x = 0, xin, y = 0, yin, z = 0, zin;
-    f0r (i, n) {
-        cin >> xin >> yin >> zin;
-        x += xin;
-        y += yin;
-        z += zin;
+    int a, b, ans = 0; cin >> a >> b;
+    while (a <= b) {
+        a *= 3;
+        b *= 2;
+        ans++;
     }
-    cout << (x == 0 && y == 0 && z == 0 ? "YES" : "NO") << nl;
+    cout << ans << nl;
 }
 
 int main() {
