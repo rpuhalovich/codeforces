@@ -1,4 +1,4 @@
-//
+// https://codeforces.com/problemset/problem/222/A
 
 #include <bits/stdc++.h>
 
@@ -19,12 +19,36 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
+    int n, k;
+    cin >> n >> k;
+    vector<int> nums(n);
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        nums[i] = num;
+    }
+
+    int cur = nums[k - 1], idx = -1;
+    for (int i = n - 1; i >= 0; i--) {
+        if (nums[i] != cur) {
+            if (i > k - 1) {
+                cout << -1 << nl;
+                return;
+            } else {
+                idx = i;
+                break;
+            }
+        }
+    }
+
+    cout << idx + 1 << nl;
 }
 
 int main() {
     ios::sync_with_stdio(0); cin.tie(0);
     int t = 1;
     // cin >> t;
-    while (t--) solve();
+    for (int i = 0; i < t; i++) solve();
     return 0;
 }
