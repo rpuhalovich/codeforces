@@ -1,4 +1,4 @@
-// https://codeforces.com/problemset/problem/222/A
+// https://codeforces.com/problemset/problem/433/A
 
 #include <bits/stdc++.h>
 
@@ -19,36 +19,41 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
-    int n, k;
-    cin >> n >> k;
-    vector<int> nums(n);
+    umap<int, int> c = {{100, 0},{200, 0}};
 
-    for (int i = 1; i < n; i++) {
-        int num;
-        cin >> num;
-        nums[i] = num;
+    int n, tot = 0;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        int in;
+        cin >> in;
+        c[in]++;
+        tot += in;
     }
 
-    int cur = nums[k - 1], idx = -1;
-    for (int i = n - 1; i >= 0; i--) {
-        if (nums[i] != cur) {
-            if (i > k - 1) {
-                cout << -1 << nl;
-                return;
-            } else {
-                idx = i;
-                break;
-            }
-        }
+    int needed = tot / 2;
+    if (needed % 100 != 0) {
+        cout << "NO" << nl;
+        return;
     }
 
-    cout << idx + 1 << nl;
+    int num200 = needed / 200;
+    if (num200 > c[200]) {
+        needed = needed - c[200] * 200;
+    } else {
+        needed = needed - num200 * 200;
+    }
+
+    if (c[100] >= needed / 100) {
+        cout << "YES" << nl;
+    } else {
+        cout << "NO" << nl;
+    }
 }
 
 int main() {
     ios::sync_with_stdio(0); cin.tie(0);
     int t = 1;
     // cin >> t;
-    for (int i = 0; i < t; i++) solve();
+    while (t--) solve();
     return 0;
 }
