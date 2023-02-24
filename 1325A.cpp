@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/problemset/problem/1325/A
 
 #include <bits/stdc++.h>
 #include <chrono>
@@ -33,10 +33,10 @@ int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int tc = 1, i = 1;
+    int tc = 1;
     // cin >> tc;
     for (int t = 0; t < tc; t++) {
-        // cout << "Case #" << i << ": "; i++;
+        // cout << "Case #" << i << ": ";
         solve();
     }
 
