@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/gym/348180/problem/A
 
 #include <bits/stdc++.h>
 #include <chrono>
@@ -23,6 +23,9 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
+    int n;
+    cin >> n;
+    cout << n / 2 << nl;
 }
 
 int main() {
@@ -34,7 +37,7 @@ int main() {
     cin.tie(0);
 
     int tc = 1;
-    // cin >> tc;
+    cin >> tc;
     for (int t = 0; t < tc; t++) {
         // cout << "Case #" << i << ": ";
         solve();
@@ -43,7 +46,7 @@ int main() {
 #ifdef LOCAL
     auto end = high_resolution_clock::now();
     cout << setprecision(4) << fixed;
-    // cout << "Execution time: " << duration_cast<duration<double>>(end - begin).count() << " seconds" << endl;
+    // cout << "Execution time: " << duration_cast<duration<double>>(end - begin).count() << " seconds" << nl;
 #endif
 
     return 0;
