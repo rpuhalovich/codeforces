@@ -15,7 +15,7 @@ $(BINS):
 
 contest:
 	for file in $(CONTEST_FILES); do cp template.cpp $$file; done
-	nvim $(CONTEST_FILES)
+	nvim -p $(CONTEST_FILES)
 
 clean:
 	rm -rf $(BINS) $(CONTEST_FILES)

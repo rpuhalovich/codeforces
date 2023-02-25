@@ -36,12 +36,11 @@ template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i+
 void solve() {
     int n, k;
     cin >> n >> k;
-    k--;
     if (n % 2 == 0) {
-        cout << (1 + k % n) << endl;
+        cout << (1 + ((k - 1) % n)) << endl;
     } else {
-        ll intersections = k / ((n - 1) / 2);
-        cout << (1 + (k + intersections) % n) << endl;
+        int intersects = (k - 1) / ((n - 1) / 2);
+        cout << 1 + (k - 1 + intersects) % n << endl;
     }
 }
 
