@@ -6,6 +6,17 @@
 using namespace std;
 using namespace std::chrono;
 
+#ifdef LOCAL
+#define TIMER_START auto begin = high_resolution_clock::now();
+#define TIMER_END \
+    auto end = high_resolution_clock::now(); \
+    cout << setprecision(4) << fixed; \
+    cout << "Execution time: " << duration_cast<duration<double>>(end - begin).count() << " seconds" << endl;
+#else
+#define TIMER_START
+#define TIMER_END
+#endif
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define endl '\n'
 #define ll long long
 #define map unordered_map
@@ -26,12 +37,8 @@ void solve() {
 }
 
 int main() {
-#ifdef LOCAL
-    auto begin = high_resolution_clock::now();
-#endif
-
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+    TIMER_START;
+    IOS;
 
     int tc = 1, i = 1;
     // cin >> tc;
@@ -40,11 +47,6 @@ int main() {
         solve();
     }
 
-#ifdef LOCAL
-    auto end = high_resolution_clock::now();
-    cout << setprecision(4) << fixed;
-    // cout << "Execution time: " << duration_cast<duration<double>>(end - begin).count() << " seconds" << endl;
-#endif
-
+    // TIMER_END;
     return 0;
 }

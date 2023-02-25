@@ -6,7 +6,7 @@ ifeq ($(shell uname), Darwin)
 endif
 
 BINS=$(subst .cpp,,$(wildcard *.cpp))
-CONTEST_FILES=a.cpp b.cpp c.cpp d.cpp e.cpp f.cpp g.cpp h.cpp
+CONTEST_FILES=a.cpp b.cpp c.cpp d.cpp e.cpp f.cpp g.cpp h.cpp i.cpp j.cpp k.cpp
 
 $(BINS):
 	$(cc) --std=c++20 -DLOCAL -o $@ $@.cpp
@@ -15,7 +15,7 @@ $(BINS):
 
 contest:
 	for file in $(CONTEST_FILES); do cp template.cpp $$file; done
-	nvim -p $(CONTEST_FILES)
+	nvim $(CONTEST_FILES)
 
 clean:
 	rm -rf $(BINS) $(CONTEST_FILES)

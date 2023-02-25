@@ -1,4 +1,4 @@
-// https://codeforces.com/problemset/problem/1325/A
+// https://codeforces.com/contest/1487/problem/B
 
 #include <bits/stdc++.h>
 #include <chrono>
@@ -34,9 +34,15 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
-    int x;
-    cin >> x;
-    cout << 1 << " " << x - 1 << endl;
+    int n, k;
+    cin >> n >> k;
+    k--;
+    if (n % 2 == 0) {
+        cout << (1 + k % n) << endl;
+    } else {
+        ll intersections = k / ((n - 1) / 2);
+        cout << (1 + (k + intersections) % n) << endl;
+    }
 }
 
 int main() {
