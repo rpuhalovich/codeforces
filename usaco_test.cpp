@@ -1,3 +1,9 @@
+/*
+ID: reanpuh1
+LANG: C++
+TASK: test
+*/
+
 #include <bits/stdc++.h>
 #include <chrono>
 
@@ -42,13 +48,16 @@ template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
 
 void solve() {
+    int a, b;
+    cin >> a >> b;
+    cout << a + b << endl;
 }
 
 int main() {
     TIMER_START;
     IOS;
 
-    // usaco("test.in");
+    usaco("test");
 
     int tc = 1, i = 1;
     // cin >> tc;
