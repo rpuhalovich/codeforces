@@ -7,9 +7,9 @@ using namespace std::chrono;
 #ifdef LOCAL
 #define TIMER_START auto begin = high_resolution_clock::now();
 #define TIMER_END \
-    auto end = high_resolution_clock::now(); \
-    cout << setprecision(4) << fixed; \
-    cout << "Execution time: " << duration_cast<duration<double>>(end - begin).count() << " seconds" << endl;
+auto end = high_resolution_clock::now(); \
+cout << setprecision(4) << fixed; \
+cout << "Execution time: " << duration_cast<duration<double>>(end - begin).count() << " seconds" << endl;
 #else
 #define TIMER_START
 #define TIMER_END
@@ -40,6 +40,7 @@ template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v){
 template<typename T> void sort(vector<T>& v){sort(v.begin(),v.end());}
 template<typename T> void rsort(vector<T>& v){sort(v.rbegin(),v.rend());}
 template<typename T1,typename T2> void seta(T1& a,int n,T2 v){for(int i=0;i<n;i++)a[i]=v;}
+template<typename T> T max(vector<T> v){T mx=ninf;for(auto i:v)mx=max(mx,i);return mx;}
 
 void solve() {
 }
