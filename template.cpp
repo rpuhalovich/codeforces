@@ -49,7 +49,7 @@ int main() {
     TIMER_START;
     IOS;
 
-    // usaco("test.in");
+    // usaco("test");
 
     int tc = 1, i = 1;
     // cin >> tc;
